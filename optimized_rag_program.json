@@ -1,0 +1,58 @@
+{
+  "retrieve": {
+    "k": 3
+  },
+  "generate_answer.predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "context": [
+          "Paris is the capital of France."
+        ],
+        "question": "What is the capital of France?",
+        "reasoning": "The context states that Paris is the capital of France, which directly answers the question.",
+        "answer": "Paris"
+      },
+      {
+        "augmented": true,
+        "context": [
+          "William Shakespeare wrote Romeo and Juliet."
+        ],
+        "question": "Who wrote Romeo and Juliet?",
+        "reasoning": "William Shakespeare is the author of Romeo and Juliet, as stated in the context.",
+        "answer": "William Shakespeare"
+      }
+    ],
+    "signature": {
+      "instructions": "Answer questions with short, fact-based answers based on the context provided.",
+      "fields": [
+        {
+          "prefix": "Context:",
+          "description": "Relevant facts retrieved from Wikipedia"
+        },
+        {
+          "prefix": "Question:",
+          "description": "${question}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Answer:",
+          "description": "Often between 1 and 5 words"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.9",
+      "dspy": "2.6.27",
+      "cloudpickle": "3.1"
+    }
+  }
+}
